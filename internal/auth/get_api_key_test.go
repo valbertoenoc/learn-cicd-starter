@@ -3,20 +3,20 @@ package auth
 import (
 	"fmt"
 	"net/http"
-	"testing"
 	"strings"
+	"testing"
 )
 
 func TestGetAPI(t *testing.T) {
-	tests := []struct{
-		key string
-		value string
-		expect string
+	tests := []struct {
+		key       string
+		value     string
+		expect    string
 		expectErr string
 	}{
 		{
-			key: "Authorization",
-			value: "-",
+			key:       "Authorization",
+			value:     "-",
 			expectErr: "malformed authorization header",
 		},
 	}
@@ -39,10 +39,10 @@ func TestGetAPI(t *testing.T) {
 				t.Errorf("Unexpected: TestGetAPIKey:%s", output)
 				return
 			}
-			
+
 		})
 
-	} 
-	
+	}
+
 	fmt.Printf("tests: %v", tests)
 }
